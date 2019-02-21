@@ -10,7 +10,7 @@ namespace BD_Auction_inc.Controllers
     {
         public ActionResult Index()
         {
-            return View();//asd
+            return View();//asdasd
         }
 
         public ActionResult About()
