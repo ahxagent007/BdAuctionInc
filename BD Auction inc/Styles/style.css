@@ -1,0 +1,421 @@
+﻿/*BODY*/
+
+.x-body {
+    background: #FCFCFC;
+    margin: auto;
+}
+
+/*LOGO AREA*/
+
+.x-headerlogo {
+    background: #3f6695;
+}
+
+/*MAIN DIV*/
+
+.x-main-div {
+    height: 100%;
+}
+
+/*SIDE DIV*/
+
+.x-side-div {
+    background: #e0edfc;
+    overflow: hidden;
+    height: 100%;
+}
+
+.x-feature-item {
+    text-align: left;
+    padding: 20px;
+}
+
+#x-scroll-div {
+    /*position: fixed;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-x: hidden;
+    top: 400px;
+    bottom: 0px;*/
+    overflow-y: scroll;
+    max-height: 250px;
+    padding: 10px;
+    text-align: left;
+}
+
+.x-last-bid {
+    text-align: left;
+    padding: 5px;
+}
+
+    .x-last-bid a {
+        margin: auto;
+    }
+
+
+.xTable td {
+    padding: 3px;
+    margin: 2px;
+}
+
+/*footer*/
+.x-footer {
+    padding: 10px;
+    text-align: center;
+    background: #3f6695;
+    color: aliceblue;
+}
+
+
+/*navbar*/
+.navbar {
+    background: #3f6695;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+    .nav-link:hover {
+        color: #EA80FC;
+    }
+
+/*upper section*/
+
+.x-upper-section {
+    text-align: center;
+}
+
+#x-login, #x-register {
+    color: #4A148C;
+    font-weight: bold;
+}
+
+    #x-login:hover, #x-register:hover {
+        text-decoration: none;
+    }
+
+/*Register*/
+.x-form-div {
+    border-radius: 25px;
+    border: 2px solid #4A148C;
+    background: #E1BEE7;
+    padding: 20px;
+    text-align: center;
+    margin: 2px;
+    font-size: 1.2em;
+}
+
+.x-border {
+    border-radius: 25px;
+    border: 2px solid #4A148C;
+}
+
+.x-form-message h3 {
+    margin: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.x-form-message {
+    margin-bottom: 15px;
+}
+
+.x-input-box {
+    border-radius: 25px;
+    background: #F3E5F5;
+    padding: 10px;
+    width: inherit;
+    height: auto;
+    text-align: center;
+}
+
+.x-form-item {
+    padding: 2px;
+    margin: 5px;
+}
+
+    .x-form-item p {
+        text-align: center;
+        align-content: center;
+        font-weight: bold;
+        margin: auto;
+    }
+
+.x-form-div {
+    text-align: center;
+    margin: 30px;
+}
+
+.x-register-welcome {
+    text-align: center;
+    margin: 10px;
+}
+
+.x-btn-purple {
+    background: #3f6695;
+    color: aliceblue;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.x-error-message {
+    color: #CF0600;
+    font-style: italic;
+}
+
+/*TEMP*/
+
+#img-secret img {
+    width: 100%;
+    padding: 30px;
+}
+
+#secret-text {
+    padding: 50px;
+    font-size: 1em;
+}
+
+
+/*TOP CAT*/
+
+.top-cat {
+    margin: 20px;
+    text-align: center
+}
+
+
+.xborder {
+    border: 1px solid #000000;
+    padding: 10px;
+    margin: 10px;
+}
+
+.ximg-responsive {
+    width: 90%;
+}
+
+.ximg-pigeonSmall {
+    max-width: 250px;
+}
+
+/*Clubs*/
+
+.xFullWidthPic {
+    width: 100%;
+}
+
+/*Article*/
+.xArticle {
+    margin: 10px;
+}
+
+
+/*AUCTION*/
+.xAuctionHeader {
+    background: #D1C4E9;
+    padding: 5px;
+}
+
+.xAuctionStatus {
+    text-align: left;
+    padding-left: 40px;
+}
+
+.xAuctionRemaining {
+    text-align: center;
+    padding-right: 40px;
+}
+
+.xRunningAuction {
+    margin: 10px;
+    padding: 30px;
+    background: #EDE7F6;
+}
+
+/*RUNNING AUCTION*/
+
+
+.xPigeonListImg {
+    max-height: 200px;
+    min-height: 200px;
+}
+
+
+.xAuctionAllPigeonList {
+    background: #E8EAF6;
+    padding: 20px;
+}
+
+/*Single Pigeon For Auction*/
+
+#x-scroll-div-single {
+    /*position: fixed;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-x: hidden;
+    top: 400px;
+    bottom: 0px;*/
+    overflow-y: scroll;
+    max-height: 400px;
+    ;
+    padding: 10px;
+    text-align: left;
+}
+
+.xPigeonPic img {
+    width: 80%;
+    margin: 10px;
+}
+
+
+/*TABLE*/
+table#t01 {
+    width: 100%;
+    background-color: #f1f1c1;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+    table#t01 tr:nth-child(even) {
+        background-color: #eee;
+    }
+
+    table#t01 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    table#t01 th {
+        color: white;
+        background-color: black;
+    }
+
+    table#t01 td img {
+        width: 100px;
+    }
+
+/*RUNNING AUCTIOn*/
+.auctionDetails {
+    margin: 20px;
+}
+
+/*ACCOUNT*/
+#propic img {
+    width: 100%;
+    margin: 20px;
+}
+
+.change-info input {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.change-info {
+    padding: 20px;
+    margin: auto;
+}
+
+
+.change-info-btn {
+    text-align: center;
+}
+
+.user-info {
+    padding: 20px;
+    margin: auto;
+}
+
+/*BID*/
+
+.bidddddd p {
+    font-size: 1.3em;
+}
+
+#lastbidder {
+    font-family: sans-serif;
+    font-size: .8em;
+    font-style: italic;
+}
+
+
+/*ADMIN add auction*/
+
+#AuctionDesc {
+    height: 200px;
+    text-align: center;
+}
+
+.pigeonSelection {
+    text-align: center;
+}
+
+
+    .pigeonSelection input {
+        width: 100%;
+        text-align: center;
+    }
+
+#pigeonDes {
+    height: 200px;
+    width: 100%;
+    text-align: center;
+}
+
+.pigeonSelectedList {
+    padding: 10px;
+    align-content: center;
+    text-align: center;
+}
+
+.singleSelectedPigeon {
+    margin: 5px;
+    border-radius: 10px;
+    background: #d6e4f9;
+}
+
+.AuctionEvent {
+    text-align: center;
+    margin: 20px;
+}
+
+/*ADD FANCIERS*/
+.center-block {
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+}
+
+
+.adminAddFancier input {
+    width: 100%;
+}
+
+#biodataDes {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
+
+/*FANCIERS*/
+.singleFancier img {
+    width: 80%;
+    height: 80%;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.singleFancier {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background: #d6e4f9;
+    border: 1px solid #000000;
+    min-height: 350px;
+}
+
+/*TESTING CODE*/
