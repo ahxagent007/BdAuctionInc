@@ -38,6 +38,11 @@ namespace BD_Auction_Inc.Controllers
         }
 
 
+        public ActionResult SignUp()
+        {
+            ViewBag.Message = "USER SIGN UP";
 
+            return View();
+        }
     }
 }

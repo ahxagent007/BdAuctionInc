@@ -1,21 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace BD_Auction_inc.Models
 {
-    public class CustomerModel{
+    public class CustomerModel {
 
-        private int cID { get; set; }
-        private string cNumber { get; set; }
-        private string cName { get; set; }
-        private string cAddress { get; set; }
-        private string cEmail { get; set; }
-        private string cNID { get; set; }
-        private int cRating { get; set; }
-        private int BidLimit { get; set; }
-        private string VarificationStatus { get; set; }
+        public int cID { get; set; }
+
+
+        //[Range(1000000000,99999999999, ErrorMessage = "Non_Valid Mobile NUmber")]
+        [StringLength(11, MinimumLength = 11, ErrorMessage = "NOT_VALID")]
+        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "Please enter your Phone number")]
+        public string cNumber { get; set; }
+
+        [Display(Name = "Name")]
+        [Required(ErrorMessage = "Please enter your Name")]
+        public string cName { get; set; }
+
+        [Display(Name = "Address")]
+        [Required(ErrorMessage = "Please enter your Address")]
+        public string cAddress { get; set; }
+
+        [Display(Name = "Email Address")]
+        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Please enter your Email Address")]
+        public string cEmail { get; set; }
+
+        [Display(Name = "Nationnal ID No.")]
+        [Required(ErrorMessage = "Please enter your NID number")]
+        public string cNID { get; set; }
+
+        [Display(Name = "Phone Number")]
+        public int cRating { get; set; }
+
+        [Display(Name = "Phone Number")]
+        public int BidLimit { get; set; }
+        public string VarificationStatus { get; set; }
+
+        [Display(Name = "Password")]
+        [Required(ErrorMessage = "Please enter Password")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+        [Compare("Password", ErrorMessage = "Password doesn't match")]
+        [DataType(DataType.Password)]
+        [StringLength(100, MinimumLength =6)]
+        public string ConfirmPassword { get; set; }
+
 
     }
 }
