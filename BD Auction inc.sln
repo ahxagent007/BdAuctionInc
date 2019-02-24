@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BD Auction inc", "BD Auction inc\BD Auction inc.csproj", "{E117F3CD-A9E0-4E80-B068-B2BDE514717D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatLibrary", "DatLibrary\DatLibrary.csproj", "{92AF194E-BA15-4A48-B72D-3E44F5FA5632}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DatLibrary\DataLibrary.csproj", "{92AF194E-BA15-4A48-B72D-3E44F5FA5632}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AuctionDB", "AuctionDB\AuctionDB.sqlproj", "{1C8D6A4D-BAD8-49E4-AF7E-C662B3A9DCA4}"
 EndProject

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BD_Auction_inc.Models;
 
 namespace BD_Auction_Inc.Controllers
 {
@@ -41,6 +42,18 @@ namespace BD_Auction_Inc.Controllers
         public ActionResult SignUp()
         {
             ViewBag.Message = "USER SIGN UP";
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SignUp(CustomerModel model)
+        {
+            if (ModelState.IsValid) {
+                return RedirectToAction("Index");
+                //VDO 33.12 min
+            }
 
             return View();
         }

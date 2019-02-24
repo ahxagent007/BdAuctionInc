@@ -34,10 +34,10 @@ namespace BD_Auction_inc.Models
         [Required(ErrorMessage = "Please enter your NID number")]
         public string cNID { get; set; }
 
-        [Display(Name = "Phone Number")]
-        public int cRating { get; set; }
+        [Display(Name = "Rating")]
+        public double cRating { get; set; }
 
-        [Display(Name = "Phone Number")]
+        [Display(Name = "Bid Limit")]
         public int BidLimit { get; set; }
         public string VarificationStatus { get; set; }
 
