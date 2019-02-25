@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BD_Auction_inc.Models;
+using DataLibrary;
+using DataLibrary.BusinessLogic;
 
 namespace BD_Auction_Inc.Controllers
 {
@@ -51,8 +53,11 @@ namespace BD_Auction_Inc.Controllers
         public ActionResult SignUp(CustomerModel model)
         {
             if (ModelState.IsValid) {
+
+                int recordCreated = CustomerProcessor.CreateCustomer(model.cName,model.cNumber, model.cAddress, model.cEmail,model.cNID, 0.0,5000,"NEW");
+
                 return RedirectToAction("Index");
-                //VDO 33.12 min
+                
             }
 
             return View();

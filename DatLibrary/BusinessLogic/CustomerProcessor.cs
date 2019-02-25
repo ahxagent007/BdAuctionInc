@@ -11,7 +11,7 @@ namespace DataLibrary.BusinessLogic
     public static class CustomerProcessor
     {
 
-        public static int CreateCustomer(string name, string number, string address, string email, string NID, double rating, string varificationStatus)
+        public static int CreateCustomer(string name, string number, string address, string email, string NID, double rating,int bidLimit, string varificationStatus)
         {
 
             CustomerModelDB data = new CustomerModelDB
@@ -22,11 +22,12 @@ namespace DataLibrary.BusinessLogic
                 cEmail = email,
                 cNID = NID,
                 cRating = rating,
+                BidLimit = bidLimit,
                 VarificationStatus = varificationStatus
             };
 
-            string sql = @"INSERT INTO dbo.Customer (cName, cNumber, cAddress, cEmail, cNID, cRating, VarificationStatus )
-                            VALUES(@name, @number, @address, @email, @NID, @rating, @varificationStatus)";
+            string sql = @"INSERT INTO dbo.Customer (cName, cNumber, cAddress, cEmail, cNID, cRating, BidLimit, VarificationStatus)
+                VALUES(@cName, @cNumber, @cAddress, @cEmail, @cNID, @cRating,@BidLimit, @VarificationStatus)";
 
             return SqlDataAccess.SaveData(sql, data);
 
