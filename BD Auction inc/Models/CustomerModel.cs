@@ -21,7 +21,7 @@ namespace BD_Auction_inc.Models
         [Required(ErrorMessage = "Please enter your Name")]
         public string cName { get; set; }
 
-        [Display(Name = "Address")]
+        [Display(Name = "Detail Home Address")]
         [Required(ErrorMessage = "Please enter your Address")]
         public string cAddress { get; set; }
 
@@ -49,6 +49,7 @@ namespace BD_Auction_inc.Models
         [Compare("Password", ErrorMessage = "Password doesn't match")]
         [DataType(DataType.Password)]
         [StringLength(100, MinimumLength =6)]
+        [Display(Name ="Re-write Password")]
         public string ConfirmPassword { get; set; }
 
 

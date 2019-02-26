@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using BD_Auction_inc.Models;
+using DataLibrary.BusinessLogic;
 
 namespace BD_Auction_inc.Controllers
 {
@@ -147,14 +148,21 @@ namespace BD_Auction_inc.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(CustomerModel model)
         {
+
+            model.cID = 69;
+            model.BidLimit = 50000;
+            model.VarificationStatus = "NEW";
+            model.cRating = 0.0;
+
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.cName, Email = model.cEmail };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    int recordCreated = CustomerProcessor.CreateCustomer(model.cName, model.cNumber, model.cAddress, model.cEmail, model.cNID, model.cRating, model.BidLimit, model.VarificationStatus);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

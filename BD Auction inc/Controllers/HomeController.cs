@@ -24,7 +24,7 @@ namespace BD_Auction_Inc.Controllers
 
         public ActionResult Auctions(){
 
-            return View();
+            return RedirectToAction("Index","Action");
         }
 
 
@@ -52,9 +52,14 @@ namespace BD_Auction_Inc.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SignUp(CustomerModel model)
         {
+            model.cID = 69;
+            model.BidLimit = 50000;
+            model.VarificationStatus = "NEW";
+            model.cRating = 0.0;
+
             if (ModelState.IsValid) {
 
-                int recordCreated = CustomerProcessor.CreateCustomer(model.cName,model.cNumber, model.cAddress, model.cEmail,model.cNID, 0.0,5000,"NEW");
+                int recordCreated = CustomerProcessor.CreateCustomer(model.cName,model.cNumber, model.cAddress, model.cEmail,model.cNID, model.cRating,model.BidLimit,model.VarificationStatus);
 
                 return RedirectToAction("Index");
                 
