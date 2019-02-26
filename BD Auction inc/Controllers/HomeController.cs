@@ -24,7 +24,7 @@ namespace BD_Auction_Inc.Controllers
 
         public ActionResult Auctions(){
 
-            return RedirectToAction("Index","Action");
+            return RedirectToAction("Index","Auction");
         }
 
 
