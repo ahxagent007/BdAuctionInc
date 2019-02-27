@@ -7,4 +7,67 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="cID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="7a4b0eeb-1b25-43aa-af84-a812c062d7ba" ChangeDateTime="02/27/2019 19:24:36">
+    <Property Name="ElementName" Value="[dbo].[Product].[Description]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="pDescription" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c8cb47ee-a1b2-48ee-b838-8aec25cafcd9" ChangeDateTime="02/27/2019 19:24:42">
+    <Property Name="ElementName" Value="[dbo].[Product].[Catagory]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="pCatagory" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a6fb670b-e82e-495b-af1d-618dc99b43cf" ChangeDateTime="02/27/2019 19:27:55">
+    <Property Name="ElementName" Value="[dbo].[ProductPictures].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ProductPictures]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PictureID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d0792d6b-cd2e-4ded-8425-f2b965355330" ChangeDateTime="02/27/2019 20:26:37">
+    <Property Name="ElementName" Value="[dbo].[AuctionEvent].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AuctionEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AcutionID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1fb85316-e3e9-4dd3-960d-64a9398aef02" ChangeDateTime="02/27/2019 20:29:47">
+    <Property Name="ElementName" Value="[dbo].[ProductsInAuction].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ProductsInAuction]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="pID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c45a70b2-2a80-45d9-9140-6a1800c4dfc5" ChangeDateTime="02/27/2019 20:30:39">
+    <Property Name="ElementName" Value="[dbo].[Bids].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Bids]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BidID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ddf0daae-c00d-424b-ae69-56131f1f7412" ChangeDateTime="02/27/2019 20:31:38">
+    <Property Name="ElementName" Value="[dbo].[Seller].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Seller]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SellerID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5ce35e87-90cf-464d-8e00-003a4494ac43" ChangeDateTime="02/27/2019 20:32:51">
+    <Property Name="ElementName" Value="[dbo].[Seller].[COntribution]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Seller]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Contribution" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="91a41e25-6c2c-4e05-beda-a6eae58acf26" ChangeDateTime="02/27/2019 20:53:48">
+    <Property Name="ElementName" Value="[dbo].[Product].[productMainPicture]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Product]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProductMainPicture" />
+  </Operation>
 </Operations>

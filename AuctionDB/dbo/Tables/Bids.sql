@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Bids]
+(
+	[BidID] INT NOT NULL PRIMARY KEY, 
+    [cID] INT NOT NULL, 
+    [ProductID] INT NOT NULL, 
+    [AuctionID] INT NOT NULL, 
+    [BidAmount] INT NOT NULL, 
+    [BidTime] VARCHAR(50) NOT NULL
+)

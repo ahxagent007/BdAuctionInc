@@ -45,9 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\AuctionProccessor.cs" />
     <Compile Include="BusinessLogic\CustomerProcessor.cs" />
     <Compile Include="DataAccess\SqlDataAccess.cs" />
+    <Compile Include="Models\AuctionEventModel.cs" />
+    <Compile Include="Models\BidModel.cs" />
     <Compile Include="Models\CustomerModelDB.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\ProductPIctureModel.cs" />
+    <Compile Include="Models\ProductsInAuctionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

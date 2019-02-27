@@ -63,7 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Customer.sql" />
-    <Build Include="dbo\Tables\TestingTable.sql" />
+    <Build Include="dbo\Tables\Product.sql" />
+    <Build Include="dbo\Tables\ProductPictures.sql" />
+    <Build Include="dbo\Tables\AuctionEvent.sql" />
+    <Build Include="dbo\Tables\ProductsInAuction.sql" />
+    <Build Include="dbo\Tables\Bids.sql" />
+    <Build Include="dbo\Tables\Seller.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AuctionDB.refactorlog" />
