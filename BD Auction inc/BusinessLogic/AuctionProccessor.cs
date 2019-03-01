@@ -1,14 +1,9 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataLibrary.Models;
-using DataLibrary.DataAccess;
+using BD_Auction_Inc.DataAccess;
+using BD_Auction_inc.Models;
 
-
-
-namespace DataLibrary.BusinessLogic
+namespace BD_Auction_Inc.BusinessLogic
 {
     public class AuctionProccessor
     {
@@ -52,10 +47,12 @@ namespace DataLibrary.BusinessLogic
 
         }
 
-        public static int RequestProductForAuction(Bd_Auction_Inc.Models.ProductModel p) {
+        public static int RequestProductForAuction(ProductModel p) {
 
             string sql = @"INSERT INTO dbo.Product (pName, pDescription, pCatagory, pStartingPrice, StartTime, EndTime, PictureID, SellerID, ProductMainPicture, ProductStatus)
-                        VALUES (@p.pName, @p.pDescription, @p.pcatagory, @p.pStartingPrice, @p.StartTime, @p.EndTime, @p.PictureID, @p.SellerID, @p.MainPicture, @p.status)";
+                        VALUES (@pName, @pDescription, @pCatagory, @pStartingPrice, @StartTime, @EndTime, @PictureID, @SellerID, @MainPicture, @ProductStatus)";
+
+            System.Console.Write("SQL = "+sql);
 
             return SqlDataAccess.SaveData(sql, p);
         }

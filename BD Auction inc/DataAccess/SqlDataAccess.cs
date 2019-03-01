@@ -8,7 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DataLibrary.DataAccess
+namespace BD_Auction_Inc.DataAccess
 {
     public static class SqlDataAccess
     {

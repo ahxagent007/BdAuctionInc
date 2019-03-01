@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.7\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -172,10 +175,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BusinessLogic\AuctionProccessor.cs" />
+    <Compile Include="BusinessLogic\CustomerProcessor.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuctionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SellerController.cs" />
+    <Compile Include="DataAccess\SqlDataAccess.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,6 +191,7 @@
     <Compile Include="Models\AuctionViewModel.cs" />
     <Compile Include="Models\BidModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\CustomerModelDB.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProductModel.cs" />
@@ -291,6 +299,10 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Auction\Index.cshtml" />
     <Content Include="Views\Auction\_RunningAuctions.cshtml" />
+    <Content Include="Views\Seller\RequestProduct.cshtml" />
+    <Content Include="Views\Auction\CreateAuction.cshtml" />
+    <Content Include="Views\Auction\RequestedProducts.cshtml" />
+    <Content Include="Views\Seller\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -303,12 +315,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DatLibrary\DataLibrary.csproj">
-      <Project>{92af194e-ba15-4a48-b72d-3e44f5fa5632}</Project>
-      <Name>DataLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

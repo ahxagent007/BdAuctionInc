@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using BD_Auction_inc.Models;
-using DataLibrary.BusinessLogic;
+using BD_Auction_Inc.BusinessLogic;
 
 namespace BD_Auction_inc.Controllers
 {

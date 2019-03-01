@@ -19,5 +19,30 @@ namespace BD_Auction_inc.Controllers
             };
             return View(AVM);
         }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult CreateAuction(){
+
+            
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public ActionResult CreateAuction(AuctionEventModel AEM)
+        {
+
+
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult RequestedProducts()
+        {
+
+
+            return View();
+        }
+
     }
 }

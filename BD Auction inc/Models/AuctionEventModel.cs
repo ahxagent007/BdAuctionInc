@@ -8,8 +8,8 @@ namespace BD_Auction_inc.Models
     public class AuctionEventModel
     {
         public int auctionID { get; set; }
-        public string acutionTitle { get; set; }
-        public string actionDescription { get; set; }
+        public string auctionTitle { get; set; }
+        public string auctionDescription { get; set; }
         public int totalProduct { get; set; }
         public string StartTime { get; set; }
         public string EndTime { get; set; }

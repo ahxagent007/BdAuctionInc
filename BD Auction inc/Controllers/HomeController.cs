@@ -4,8 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BD_Auction_inc.Models;
-using DataLibrary;
-using DataLibrary.BusinessLogic;
+using BD_Auction_Inc.BusinessLogic;
 
 namespace BD_Auction_Inc.Controllers
 {
