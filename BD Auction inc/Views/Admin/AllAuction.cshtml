@@ -1,0 +1,39 @@
+﻿@model BD_Auction_inc.Models.AllAuctionLoad
+@using BD_Auction_inc.Models
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Totap Product</th>
+            <th scope="col">Start T.</th>
+            <th scope="col">End T.</th>
+            <th scope="col">Status</th>
+            <th scope="col">Picture</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (AuctionEventModel A in Model.AuctionList)
+            {
+            <tr>
+                <th scope="row">@A.AuctionID</th>
+                <th scope="row">@A.AuctionTitle</th>
+                <th scope="row">@A.AuctionDescription</th>
+                <th scope="row">@A.TotalProducts</th>
+                <th scope="row">@A.StartTime</th>
+                <th scope="row">@A.EndTime</th>
+                <th scope="row">@A.AuctionStatus</th>
+                <th scope="row">@A.AuctionMainPicture</th>
+
+            </tr>
+            }
+
+        }
+
+
+    </tbody>
+</table>

@@ -7,13 +7,13 @@ namespace BD_Auction_inc.Models
 {
     public class AuctionEventModel
     {
-        public int auctionID { get; set; }
-        public string auctionTitle { get; set; }
-        public string auctionDescription { get; set; }
-        public int totalProduct { get; set; }
+        public int AuctionID { get; set; }
+        public string AuctionTitle { get; set; }
+        public string AuctionDescription { get; set; }
+        public int TotalProducts { get; set; }
         public string StartTime { get; set; }
         public string EndTime { get; set; }
-        public string auctionMainPicture { get; set; }
-        public string auctionStatus { get; set; }
+        public string AuctionMainPicture { get; set; }
+        public string AuctionStatus { get; set; }
     }
 }

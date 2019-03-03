@@ -7,25 +7,34 @@ namespace BD_Auction_Inc.BusinessLogic
 {
     public class AuctionProccessor
     {
-        public static int CreateAuction(string title, string description, string startTime, string endTime, int totalProducts, string status,string mainPic)
+        public static int createAuction(string title, string description, string startTime, string endTime, int totalProducts, string status,string mainPic)
         {
 
             AuctionEventModel data = new AuctionEventModel
             {
-                auctionTitle = title,
-                auctionDescription = description,
+                AuctionTitle = title,
+                AuctionDescription = description,
                 StartTime = startTime,
                 EndTime = endTime,
-                totalProduct = totalProducts,
-                auctionStatus = status,
-                auctionMainPicture = mainPic
+                TotalProducts = totalProducts,
+                AuctionStatus = status,
+                AuctionMainPicture = mainPic
 
             };
 
             string sql = @"INSERT INTO dbo.AuctionEvent (AuctionTitle, Description, StartTime, EndTime, TotalProducts, AuctionStatus, AuctionMainPicture)
-                VALUES(@title, @description, @startTime, @endTime, @totalProducts, @status, @mainPic)";
+                VALUES(@AuctionTitle, @AuctionDescription, @StartTime, @EndTime, @TotalProducts, @AuctionStatus, @AuctionMainPicture)";
 
             return SqlDataAccess.SaveData(sql, data);
+
+        }
+
+        public static List<AuctionEventModel> LoadAllAuctions()
+        {
+
+            string sql = @"SELECT * FROM dbo.AuctionEvent";
+
+            return SqlDataAccess.LoadData<AuctionEventModel>(sql); //VDO 59.36
 
         }
 
@@ -63,6 +72,15 @@ namespace BD_Auction_Inc.BusinessLogic
             string sql = @""; //Join SQL 
 
             return SqlDataAccess.LoadData<ProductModel>(sql); //VDO 59.36
+
+        }
+
+        public static List<ProductModel> LoadAllProduct()
+        {
+
+            string sql = @"SELECT * FROM dbo.Product";
+
+            return SqlDataAccess.LoadData<ProductModel>(sql); 
 
         }
 

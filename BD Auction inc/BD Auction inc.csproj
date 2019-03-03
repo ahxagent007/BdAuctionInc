@@ -178,6 +178,7 @@
     <Compile Include="BusinessLogic\AuctionProccessor.cs" />
     <Compile Include="BusinessLogic\CustomerProcessor.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuctionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -187,6 +188,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AllAuctionLoad.cs" />
+    <Compile Include="Models\AllProductsLoad.cs" />
     <Compile Include="Models\AuctionEventModel.cs" />
     <Compile Include="Models\AuctionViewModel.cs" />
     <Compile Include="Models\BidModel.cs" />
@@ -303,6 +306,8 @@
     <Content Include="Views\Auction\CreateAuction.cshtml" />
     <Content Include="Views\Auction\RequestedProducts.cshtml" />
     <Content Include="Views\Seller\Index.cshtml" />
+    <Content Include="Views\Admin\AllProducts.cshtml" />
+    <Content Include="Views\Admin\AllAuction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

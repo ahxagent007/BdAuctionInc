@@ -1,0 +1,44 @@
+﻿@model BD_Auction_inc.Models.AllProductsLoad
+@using BD_Auction_inc.Models
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">Description</th>
+            <th scope="col">Catagory</th>
+            <th scope="col">Starting Price</th>
+            <th scope="col">Current Bid</th>
+            <th scope="col">Start T.</th>
+            <th scope="col">End T.</th>
+            <th scope="col">Seller ID</th>
+            <th scope="col">Status</th>
+            <th scope="col">Picture</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (ProductModel p in Model.productList)
+            {
+                <tr>
+                    <th scope="row">@p.pID</th>
+                    <th scope="row">@p.pName</th>
+                    <th scope="row">@p.pDescription</th>
+                    <th scope="row">@p.pCatagory</th>
+                    <th scope="row">@p.pStartingPrice</th>
+                    <th scope="row">@p.pCurrentBid</th>
+                    <th scope="row">@p.StartTime</th>
+                    <th scope="row">@p.EndTime</th>
+                    <th scope="row">@p.SellerID</th>
+                    <th scope="row">@p.ProductStatus</th>
+                    <th scope="row">@p.MainPicture</th>
+                </tr>
+            }
+
+        }
+
+
+    </tbody>
+</table>
