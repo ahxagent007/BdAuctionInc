@@ -6,7 +6,119 @@
 
 
 
-@{
-    Html.Partial("_RunningAuctions", Model);
-    } 
+<!--Html.Partial("_RunningAuctions", Model);-->
+@if (Model.runningAuctions.Count > 0)
+{
+    <div class="xAuctionHeader">
+        <div class="row">
+            <div class="col-md-6 xAuctionStatus">
+                <h5><strong>Running Auction</strong></h5>
+            </div>
+            <div class="col-md-6 xAuctionRemaining">
+                <p id="timeleft"></p>
+            </div>
+
+        </div>
+    </div>
+
+    foreach (AuctionEventModel AEM in Model.runningAuctions)
+    {
+        <div class="xRunningAuction">
+            <div class="auctionDetails">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="ximg-responsive" src="#">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="xActionTEXT">
+                            <h5><strong>@AEM.AuctionTitle</strong></h5>
+                            <p>@AEM.AuctionDescription</p>
+                        </div>
+                        <div class="xAuctionRemaining">
+                            <p id="timeleft'.$i.'">@AEM.StartTime</p>
+                        </div>
+
+                        <a type="button" class="btn btn-primary x-btn-purple" href="">Go to Auction</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+}
+else
+{
+
+}
+
+@if (Model.upcommingAuctions.Count > 0)
+{
+    <div class="xAuctionHeader">
+        <div class="row">
+            <div class="col-md-6 xAuctionStatus">
+                <h5><strong>Upcoming Auction</strong></h5>
+            </div>
+
+        </div>
+    </div>
+
+    foreach (AuctionEventModel AEM in Model.upcommingAuctions)
+    {
+        <div class="xRunningAuction">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="ximg-responsive" src="'.$imgdest.'">
+                </div>
+                <div class="col-md-8">
+                    <div class="xActionTEXT">
+                        <h5><strong>@AEM.AuctionTitle</strong></h5>
+                        <p>@AEM.AuctionDescription</p>
+                    </div>
+                    <div class="xAuctionRemaining">
+                        <p id="utimeleft'.$i.'"></p>
+                    </div>
+                    <a type="button" class="btn btn-primary x-btn-purple" href="">View Auction</a>
+                </div>
+            </div>
+        </div>
+
+    }
+}
+else
+{
+
+}
+
+@if (Model.pastAuctions.Count > 0)
+{
+    <div class="xAuctionHeader">
+        <div class="row">
+            <div class="col-md-6 xAuctionStatus">
+                <h5><strong>Past Auction</strong></h5>
+            </div>
+        </div>
+    </div>
+    <div class="top-cat text-center">
+        <div class="row">
+
+            @foreach (AuctionEventModel AEM in Model.pastAuctions)
+            {
+                <div class="col-sm-4">
+                    <div class="xborder">
+                        <h3>@AEM.AuctionTitle</h3>
+                        <img class="ximg-responsive ximg-pigeonSmall" src="">
+                        <a type="button" class="btn btn-primary x-btn-purple" href="">View</a>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+    }
+    else
+    {
+
+}
 

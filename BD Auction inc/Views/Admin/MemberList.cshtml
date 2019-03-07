@@ -1,0 +1,41 @@
+﻿@Model BD_Auction_Inc.Models.MemberViewModel
+@using BD_Auction_Inc.Models
+@{
+    ViewBag.Title = "MemberList";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address Price</th>
+            <th scope="col">Ratting</th>
+            <th scope="col">NID</th>
+            <th scope="col">Status</th>
+            <th scope="col">Bid Limit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CustomerModelDB c in Model.customerList){
+                <tr>
+                    <th scope="row">@c.cID</th>
+                    <th scope="row">@c.cName</th>
+                    <th scope="row">@c.cNumber</th>
+                    <th scope="row">@c.cEmail </th>
+                    <th scope="row">@c.cAddress </th>
+                    <th scope="row">@c.cRating</th>
+                    <th scope="row">@c.cNID</th>
+                    <th scope="row">@c.VarificationStatus</th>
+                    <th scope="row">@c.BidLimit</th>
+                </tr>
+            }
+
+        
+
+
+    </tbody>
+</table>

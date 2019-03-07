@@ -25,10 +25,10 @@ namespace BD_Auction_inc.Controllers
                 productList = AuctionProccessor.LoadAllProduct()
             };
 
-
-
             return View(APL);
         }
+
+
 
         public ActionResult AllAuction() {
 
@@ -38,6 +38,40 @@ namespace BD_Auction_inc.Controllers
             };
 
             return View(AAL);
+        }
+
+
+        public void AddProductToAuction(int AucID, int ProID) {
+            int res = AuctionProccessor.addProductToAuction(AucID, ProID);
+            
+        }
+
+        public ActionResult MemberList() {
+
+            MemberViewModel MVM = new MemberViewModel {
+                customerList = AuctionProccessor.GetAllMembers()
+            };
+
+            return View(MVM);
+        }
+
+        public ActionResult RunningAuction(int ID) {
+
+            if (AuctionProccessor.GetAuctionByID(ID).Count > 0)
+            {
+                RunningAuctionViewModel RAM = new RunningAuctionViewModel {
+                    AuctionEventList = AuctionProccessor.GetAuctionByID(ID),
+                    PoductList = AuctionProccessor.GetProductByAuctionID(ID)
+                };
+                
+                return View(RAM);
+
+            }
+            else {
+                return View();
+            }
+
+            
         }
     }
 }

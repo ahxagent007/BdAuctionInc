@@ -16,7 +16,9 @@ namespace BD_Auction_inc.Controllers
         {
 
             AuctionViewModel AVM = new AuctionViewModel {
-                
+                runningAuctions = AuctionProccessor.GetAuctionByStatus("RUNNING"),
+                pastAuctions = AuctionProccessor.GetAuctionByStatus("FINISHED"),
+                upcommingAuctions = AuctionProccessor.GetAuctionByStatus("UPCOMING")
             };
             return View(AVM);
         }
@@ -37,13 +39,15 @@ namespace BD_Auction_inc.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public ActionResult RequestedProducts()
         {
 
 
             return View();
         }
+
+        //$qry = "SELECT * FROM fanciers ORDER BY FancierName ASC LIMIT ".$rowFrom.", ".$rowTo.";";
 
     }
 }

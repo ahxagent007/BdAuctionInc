@@ -1,24 +1,30 @@
-﻿@using BD_Auction_inc.Models;
-@Model BD_Auction_inc.Models.AuctionViewModel;
+﻿@model BD_Auction_inc.Models.AuctionViewModel
+@using BD_Auction_inc.Models
 
 
-<div class="xRunningAuction">
-    <div class="auctionDetails">
-        <div class="row">
-            <div class="col-md-4">
-                <img class="ximg-responsive" src="#">
-            </div>
-            <div class="col-md-8">
-                <div class="xActionTEXT">
-                    <h5><strong>Action Name</strong></h5>
-                    <p>'Auction details</p>
+
+@{ foreach (AuctionEventModel AEM in Model.runningAuctions)
+    {
+        <div class="xRunningAuction">
+            <div class="auctionDetails">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="ximg-responsive" src="#">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="xActionTEXT">
+                            <h5><strong>@AEM.AuctionTitle</strong></h5>
+                            <p>@AEM.AuctionDescription</p>
+                        </div>
+                        <div class="xAuctionRemaining">
+                            <p id="timeleft'.$i.'">@AEM.StartTime</p>
+                        </div>
+
+                        <a type="button" class="btn btn-primary x-btn-purple" href="">Go to Auction</a>
+                    </div>
                 </div>
-                <div class="xAuctionRemaining">
-                    <p id="timeleft'.$i.'">TIEM LEFT</p>
-                </div>
-
-                <a type="button" class="btn btn-primary x-btn-purple" href="">Go to Auction</a>
             </div>
         </div>
-    </div>
-</div>
+
+    }
+

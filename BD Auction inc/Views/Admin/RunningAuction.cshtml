@@ -1,0 +1,74 @@
+﻿@model BD_Auction_inc.Models.RunningAuctionViewModel
+@using BD_Auction_inc.Models
+@{
+    ViewBag.Title = "RunningAuction";
+}
+
+
+
+<div class="container">
+
+    <div class="xAuctionWelcome">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="img/slider/s1.jpg" class="ximg-responsive">
+            </div>
+            <div class="col-md-12">
+                <div class="xActionTEXT">
+                    <h5>
+                        <strong>NAME!</strong>
+                    </h5>
+                    <p>
+                        DSCRIPTOIN
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="xAuctionAllPigeonList">
+                    <div class="row">
+
+
+                        <?php
+
+                        for($i=1; $i<=$auctions["TotalPigeons"]; $i+=1){
+
+
+                        echo '
+
+                        <div class="col-sm-4">
+                            <div class="xborder">
+                                <h3><strong>'.$Pigeon[$i]["PigeonName"].'</strong></h3>
+                                <img class="ximg-responsive xPigeonListImg ximg-pigeonSmall" src="'.$Pigeon[$i][" PictureMain"].'">
+                                ';
+
+                                if(!empty($Pigeon[$i]['LastBid'])){
+                                echo '<p>LastBid: '.$Pigeon[$i]["LastBid"].'</p>';
+                                }
+
+                                echo '
+                                <a type="button" class="btn btn-primary x-btn-purple" href="singlePigeonForAuction.php?Auction='.$Pigeon[$i][" AuctionLot"].'&Pigeon='.$Pigeon[$i]["PigeonId"].' ">View</a>
+                            </div>
+                        </div>
+                        ';
+                        }
+                        ?>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+</div>
