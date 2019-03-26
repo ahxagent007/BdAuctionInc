@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BD_Auction_Inc.BusinessLogic;
+using System.IO;
 
 namespace BD_Auction_inc.Controllers
 {
@@ -31,6 +32,18 @@ namespace BD_Auction_inc.Controllers
             model.ProductStatus = "REQUESTING";
 
             if (ModelState.IsValid){
+
+                string fileName = Path.GetFileNameWithoutExtension(model.ImageFile.FileName);
+                string extension = Path.GetExtension(model.ImageFile.FileName);
+                fileName = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + extension;
+
+                model.MainPicture = "~/img/upload/products/" + fileName;
+
+                fileName = Path.Combine(Server.MapPath("~/img/upload/products/"), fileName);
+
+                model.ImageFile.SaveAs(fileName);
+
+                /*<img src="@Url.Content(Model.MainPicture)"/>*/
 
                 int recordCreated = AuctionProccessor.RequestProductForAuction(model);
 

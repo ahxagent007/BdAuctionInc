@@ -20,6 +20,7 @@ namespace BD_Auction_inc.Models
         public string MainPicture { get; set; }
         public int SellerID { get; set; }
         public string ProductStatus { get; set; }
+        public HttpPostedFileBase ImageFile {get; set;}
 
     }
 }

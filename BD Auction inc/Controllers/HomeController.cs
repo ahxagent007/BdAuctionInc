@@ -29,7 +29,7 @@ namespace BD_Auction_Inc.Controllers
 
         public ActionResult Seller(){
 
-            return View();
+            return RedirectToAction("Index", "Seller");
         }
 
 
