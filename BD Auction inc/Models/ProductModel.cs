@@ -12,12 +12,12 @@ namespace BD_Auction_inc.Models
         public string pName { get; set; }
         public string pDescription { get; set; }
         public string pCatagory { get; set; }
-        public string pStartingPrice { get; set; }
-        public string pCurrentBid { get; set; }
+        public int pStartingPrice { get; set; }
+        public int pCurrentBid { get; set; }
         public string StartTime { get; set; }
         public string EndTime { get; set; }
         public string PictureID { get; set; }
-        public string MainPicture { get; set; }
+        public string ProductMainPicture { get; set; }
         public int SellerID { get; set; }
         public string ProductStatus { get; set; }
         public HttpPostedFileBase ImageFile {get; set;}

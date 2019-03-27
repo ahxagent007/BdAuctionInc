@@ -303,10 +303,10 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Auction\Index.cshtml" />
-    <Content Include="Views\Auction\_RunningAuctions.cshtml" />
+    <Content Include="Views\Admin\_RunningAuctions.cshtml" />
     <Content Include="Views\Seller\RequestProduct.cshtml" />
-    <Content Include="Views\Auction\CreateAuction.cshtml" />
-    <Content Include="Views\Auction\RequestedProducts.cshtml" />
+    <Content Include="Views\Admin\CreateAuction.cshtml" />
+    <Content Include="Views\Admin\RequestedProducts.cshtml" />
     <Content Include="Views\Seller\Index.cshtml" />
     <Content Include="Views\Admin\AllProducts.cshtml" />
     <Content Include="Views\Admin\AllAuction.cshtml" />
@@ -317,6 +317,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="img\main\" />
+    <Folder Include="img\upload\auction\" />
     <Folder Include="img\upload\products\" />
   </ItemGroup>
   <ItemGroup>

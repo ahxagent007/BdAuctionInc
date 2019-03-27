@@ -22,14 +22,17 @@ namespace BD_Auction_inc.Controllers
             return View();
         }
 
-
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult RequestProduct(ProductModel model){
 
             model.ProductStatus = "REQUESTING";
+            model.pID = 0;
+            model.pCurrentBid = 0;
+            model.StartTime = null;
+            model.EndTime = null;
+            model.PictureID = null;
+            model.SellerID = 1; //SELLER ID           
 
             if (ModelState.IsValid){
 
@@ -37,13 +40,13 @@ namespace BD_Auction_inc.Controllers
                 string extension = Path.GetExtension(model.ImageFile.FileName);
                 fileName = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + extension;
 
-                model.MainPicture = "~/img/upload/products/" + fileName;
+                model.ProductMainPicture = "~/img/upload/products/" + fileName;
 
                 fileName = Path.Combine(Server.MapPath("~/img/upload/products/"), fileName);
 
                 model.ImageFile.SaveAs(fileName);
 
-                /*<img src="@Url.Content(Model.MainPicture)"/>*/
+                /*<img src="@Url.Content(Model.ProductMainPicture)"/>*/
 
                 int recordCreated = AuctionProccessor.RequestProductForAuction(model);
 
@@ -53,5 +56,8 @@ namespace BD_Auction_inc.Controllers
 
             return View();
         }
+
+
+
     }
 }

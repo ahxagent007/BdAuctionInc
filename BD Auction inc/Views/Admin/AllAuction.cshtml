@@ -1,6 +1,9 @@
 ﻿@model BD_Auction_inc.Models.AllAuctionLoad
 @using BD_Auction_inc.Models
 
+@Html.Partial("index")
+
+
 
 <table class="table">
     <thead>
@@ -27,7 +30,7 @@
                 <th scope="row">@A.StartTime</th>
                 <th scope="row">@A.EndTime</th>
                 <th scope="row">@A.AuctionStatus</th>
-                <th scope="row">@A.AuctionMainPicture</th>
+                <th scope="row"><img src="@Url.Content(A.AuctionMainPicture)" height="150" /></th>
 
             </tr>
             }

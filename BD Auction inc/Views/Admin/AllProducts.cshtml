@@ -2,6 +2,8 @@
 @using BD_Auction_inc.Models
 
 
+@Html.Partial("index")
+
 <table class="table">
     <thead>
         <tr>
@@ -33,7 +35,7 @@
                     <th scope="row">@p.EndTime</th>
                     <th scope="row">@p.SellerID</th>
                     <th scope="row">@p.ProductStatus</th>
-                    <th scope="row">@p.MainPicture</th>
+                    <th scope="row"><img src="@Url.Content(p.ProductMainPicture)" height="100"/></th>
                 </tr>
             }
 

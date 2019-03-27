@@ -1,9 +1,8 @@
-﻿@Model BD_Auction_Inc.Models.MemberViewModel
+﻿@model BD_Auction_Inc.Models.MemberViewModel
 @using BD_Auction_Inc.Models
-@{
-    ViewBag.Title = "MemberList";
-}
 
+
+@Html.Partial("index")
 
 <table class="table">
     <thead>
@@ -20,21 +19,22 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (CustomerModelDB c in Model.customerList){
-                <tr>
-                    <th scope="row">@c.cID</th>
-                    <th scope="row">@c.cName</th>
-                    <th scope="row">@c.cNumber</th>
-                    <th scope="row">@c.cEmail </th>
-                    <th scope="row">@c.cAddress </th>
-                    <th scope="row">@c.cRating</th>
-                    <th scope="row">@c.cNID</th>
-                    <th scope="row">@c.VarificationStatus</th>
-                    <th scope="row">@c.BidLimit</th>
-                </tr>
-            }
+        @foreach (CustomerModelDB c in Model.customerList)
+        {
+            <tr>
+                <th scope="row">@c.cID</th>
+                <th scope="row">@c.cName</th>
+                <th scope="row">@c.cNumber</th>
+                <th scope="row">@c.cEmail </th>
+                <th scope="row">@c.cAddress </th>
+                <th scope="row">@c.cRating</th>
+                <th scope="row">@c.cNID</th>
+                <th scope="row">@c.VarificationStatus</th>
+                <th scope="row">@c.BidLimit</th>
+            </tr>
+        }
 
-        
+
 
 
     </tbody>

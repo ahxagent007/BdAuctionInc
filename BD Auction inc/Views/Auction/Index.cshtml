@@ -27,7 +27,7 @@
             <div class="auctionDetails">
                 <div class="row">
                     <div class="col-md-4">
-                        <img class="ximg-responsive" src="#">
+                        <img class="ximg-responsive" src="@Url.Content(AEM.AuctionMainPicture)"  />
                     </div>
                     <div class="col-md-8">
                         <div class="xActionTEXT">
@@ -67,7 +67,7 @@ else
         <div class="xRunningAuction">
             <div class="row">
                 <div class="col-md-4">
-                    <img class="ximg-responsive" src="'.$imgdest.'">
+                    <img class="ximg-responsive" src="@Url.Content(AEM.AuctionMainPicture)" />
                 </div>
                 <div class="col-md-8">
                     <div class="xActionTEXT">
@@ -105,8 +105,8 @@ else
             {
                 <div class="col-sm-4">
                     <div class="xborder">
-                        <h3>@AEM.AuctionTitle</h3>
-                        <img class="ximg-responsive ximg-pigeonSmall" src="">
+                        <h4>@AEM.AuctionTitle</h4>
+                        <img class="ximg-responsive" src="@Url.Content(AEM.AuctionMainPicture)" />
                         <a type="button" class="btn btn-primary x-btn-purple" href="">View</a>
                     </div>
                 </div>

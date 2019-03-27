@@ -31,6 +31,8 @@ namespace BD_Auction_inc.Models
         [Display(Name = "Main Picture")]
         public string AuctionMainPicture { get; set; }
 
+        public HttpPostedFileBase ImageFile { get; set; }
+
         public string AuctionStatus { get; set; }
     }
 }
