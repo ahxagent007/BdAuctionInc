@@ -74,6 +74,16 @@ namespace BD_Auction_inc.Controllers
                 return View(model);
             }
 
+            var userName = model.Email;
+            using (var context = new ApplicationDbContext())
+            {
+                var user = context.Users.FirstOrDefault(p => p.Email == model.Email);
+                if (user != null)
+                {
+                    userName = user.UserName;
+                }
+            }
+
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
@@ -158,7 +168,7 @@ namespace BD_Auction_inc.Controllers
 
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.cName, Email = model.cEmail };
+                var user = new ApplicationUser { UserName = model.cEmail, Email = model.cEmail };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
