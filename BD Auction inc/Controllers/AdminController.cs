@@ -20,7 +20,8 @@ namespace BD_Auction_inc.Controllers
             return View();
         }
 
-        public ActionResult AllProducts() {
+        public ActionResult AllProducts()
+        {
 
             AllProductsLoad APL = new AllProductsLoad
             {
@@ -28,6 +29,39 @@ namespace BD_Auction_inc.Controllers
             };
 
             return View(APL);
+        }
+        public ActionResult RequestedProducts()
+        {
+
+            RequestedProductsViewModel RPVM = new RequestedProductsViewModel
+            {
+                productList = AuctionProccessor.LoadAllRequestedProduct(),
+                upcommingAuctions = AuctionProccessor.GetAuctionByStatus("UPCOMING")
+            };
+
+            return View(RPVM);
+        }
+
+        [HttpPost]
+        public ActionResult RequestedProducts(RequestedProductsViewModel RPVM)
+        {
+            string AuctionID = RPVM.SelectedAuctionAndProduct;
+
+            string[] tokens = AuctionID.Split(':');
+
+            int PID = Convert.ToInt32(tokens[0]);
+            int AID = Convert.ToInt32(tokens[1]);
+
+            System.Diagnostics.Debug.WriteLine("AUCTION ID = "+AuctionID);
+
+            AuctionProccessor.addProductToAuction(AID, PID);
+            List<AuctionEventModel> Auction = AuctionProccessor.GetAuctionByID(AID);
+
+            AuctionProccessor.updateProductData(Auction[0].StartTime, Auction[0].EndTime, PID);
+
+
+            return Redirect("/Admin/RequestedProducts");
+
         }
 
 
@@ -109,13 +143,7 @@ namespace BD_Auction_inc.Controllers
             return View();
         }
 
-        //[Authorize(Roles = "Admin")]
-        public ActionResult RequestedProducts()
-        {
 
-
-            return View();
-        }
 
         //$qry = "SELECT * FROM fanciers ORDER BY FancierName ASC LIMIT ".$rowFrom.", ".$rowTo.";";
     }

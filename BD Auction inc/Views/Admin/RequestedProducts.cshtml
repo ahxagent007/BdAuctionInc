@@ -1,7 +1,69 @@
-﻿
-@{
-    ViewBag.Title = "RequestedProducts";
-}
+﻿@model BD_Auction_inc.Models.RequestedProductsViewModel
+@using BD_Auction_inc.Models
 
-<h2>RequestedProducts</h2>
 
+@Html.Partial("index")
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">NAME</th>
+            <th scope="col">Description</th>
+            <th scope="col">Catagory</th>
+            <th scope="col">Starting Price</th>
+            <th scope="col">Seller ID</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (ProductModel p in Model.productList)
+            {
+        <tr>
+            <th scope="row">@p.pName</th>
+            <th scope="row">@p.pDescription</th>
+            <th scope="row">@p.pCatagory</th>
+            <th scope="row">@p.pStartingPrice</th>
+            <th scope="row">@p.SellerID</th>
+            <th scope="row"><img src="@Url.Content(p.ProductMainPicture)" height="100" /></th>
+
+            @{
+                List<SelectListItem> listItems = new List<SelectListItem>();
+
+                foreach (AuctionEventModel em in Model.upcommingAuctions)
+                {
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = em.AuctionID + " " + em.AuctionTitle,
+                        Value = p.pID+":"+ em.AuctionID
+                    });
+
+                }
+            }
+
+            <th>
+
+
+                @using (Html.BeginForm("RequestedProducts", "Admin", FormMethod.Post)) //"RequestProduct", "Seller", FormMethod.Post, new { enctype = "multipart/form-data" }
+                {
+                    @Html.DropDownListFor(model => model.SelectedAuctionAndProduct, listItems, "-- Select Auction --")
+
+
+
+
+                    <input id="Submit" type="submit" value="ADD" />
+
+                }
+
+
+            </th>
+        </tr>
+            }
+
+        }
+
+
+    </tbody>
+</table>

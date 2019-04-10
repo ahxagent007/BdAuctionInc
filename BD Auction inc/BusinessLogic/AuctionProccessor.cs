@@ -66,9 +66,21 @@ namespace BD_Auction_Inc.BusinessLogic
         public static int addProductToAuction(int aID, int pID) {
             string sts = "ENTRY";
             string sql = @"INSERT INTO dbo.ProductsInAuction (pID, AuctionID, Status)
-                        VALUES (@pID, @AuctionID, @Status )";
+                        VALUES (@pID, @AuctionID, @Status );
+                        UPDATE dbo.Product SET ProductStatus = @Status WHERE pID = @pID;
+                        UPDATE dbo.AuctionEvent SET TotalProducts = TotalProducts + 1 WHERE AuctionID = @AuctionID; 
+                        
+";
 
             return SqlDataAccess.SaveData(sql,new { pID = pID, AuctionID = aID, Status = sts});
+        }
+
+        public static int updateProductData(string sTime, string eTime, int pID)
+        {
+
+            string sql = @"UPDATE dbo.Product SET StartTime = @StartTime, EndTime = @EndTime WHERE pID = @pID;";
+
+            return SqlDataAccess.SaveData(sql, new { StartTime = sTime, EndTime = eTime, pID = pID });
         }
 
 
@@ -94,7 +106,16 @@ namespace BD_Auction_Inc.BusinessLogic
 
             string sql = @"SELECT * FROM dbo.Product";
 
-            return SqlDataAccess.LoadData<ProductModel>(sql); 
+            return SqlDataAccess.LoadData<ProductModel>(sql);
+
+        }
+
+        public static List<ProductModel> LoadAllRequestedProduct()
+        {
+
+            string sql = @"SELECT * FROM dbo.Product WHERE ProductStatus = 'REQUESTING'";
+
+            return SqlDataAccess.LoadData<ProductModel>(sql);
 
         }
 

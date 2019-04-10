@@ -201,6 +201,7 @@
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ProductPIctureModel.cs" />
     <Compile Include="Models\ProductsInAuctionModel.cs" />
+    <Compile Include="Models\RequestedProductsViewModel.cs" />
     <Compile Include="Models\RunningAuctionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
