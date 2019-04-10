@@ -12,6 +12,7 @@ namespace BD_Auction_inc.Controllers
     public class SellerController : Controller
     {
         // GET: Seller
+        [Authorize]
         public ActionResult Index()
         {
             return View();
@@ -24,11 +25,12 @@ namespace BD_Auction_inc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult RequestProduct(ProductModel model){
 
             model.ProductStatus = "REQUESTING";
             model.pID = 0;
-            model.pCurrentBid = 0;
+            model.CurrentBid = 0;
             model.StartTime = null;
             model.EndTime = null;
             model.PictureID = null;

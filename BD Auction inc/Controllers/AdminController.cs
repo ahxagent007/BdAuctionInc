@@ -97,7 +97,7 @@ namespace BD_Auction_inc.Controllers
             {
                 RunningAuctionViewModel RAM = new RunningAuctionViewModel {
                     AuctionEventList = AuctionProccessor.GetAuctionByID(ID),
-                    PoductList = AuctionProccessor.GetProductByAuctionID(ID)
+                    PoductList = AuctionProccessor.GetProductsByAuctionID(ID)
                 };
                 
                 return View(RAM);

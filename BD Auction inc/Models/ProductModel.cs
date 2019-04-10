@@ -13,7 +13,7 @@ namespace BD_Auction_inc.Models
         public string pDescription { get; set; }
         public string pCatagory { get; set; }
         public int pStartingPrice { get; set; }
-        public int pCurrentBid { get; set; }
+        public int CurrentBid { get; set; }
         public string StartTime { get; set; }
         public string EndTime { get; set; }
         public string PictureID { get; set; }

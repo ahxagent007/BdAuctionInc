@@ -1,0 +1,30 @@
+﻿@using BD_Auction_inc.Models
+@model BD_Auction_inc.Models.AllProductsLoad
+@{
+    ViewBag.Title = "SingleAuction";
+}
+
+<div class="row">
+    @foreach (ProductModel pm in Model.productList)
+    {
+        <div class="col-md-4">
+            <div><p>@pm.pName</p></div>
+            <div><p>@pm.pDescription</p></div>
+            <div><img src="@Url.Content(pm.ProductMainPicture)" width="300" height="300"></div>
+            <div>Current bid: @pm.CurrentBid</div>
+            <button onclick="location.href='@Url.Action("Bid","Auction")?PID=@pm.pID&BID=@(pm.CurrentBid+500)'">Bid @(pm.CurrentBid+500)</button>
+
+
+
+        </div>
+
+    }
+
+
+</div>
+
+
+
+
+
+

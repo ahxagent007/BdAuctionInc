@@ -11,7 +11,13 @@ namespace BD_Auction_Inc.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index(){
-            return View();
+
+            AllBids AB = new AllBids
+            {
+                BIDSS = AuctionProccessor.Get50Bids()
+            };
+
+            return View(AB);
         }
 
         public ActionResult About(){

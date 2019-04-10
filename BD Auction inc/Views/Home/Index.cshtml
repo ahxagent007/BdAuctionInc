@@ -1,4 +1,6 @@
-﻿@{
+﻿@using BD_Auction_inc.Models
+@model BD_Auction_inc.Models.AllBids
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -47,11 +49,14 @@
                                     <th>NAME</th>
                                 </tr>
 
-                                <tr>
-                                    <td>TIME</td>
-                                    <td>AMOUNT</td>
-                                    <td>NAME!</td>
-                                </tr>
+                                @foreach (BidModel BM in Model.BIDSS) {
+                                    <tr>
+                                        <td>@BM.BidTime</td>
+                                        <td>@BM.BidAmount</td>
+                                        <td>@BM.cID!</td>
+                                    </tr>
+                                }
+                                
 
                             </table>
                         </div>

@@ -35,10 +35,10 @@
                             <p>@AEM.AuctionDescription</p>
                         </div>
                         <div class="xAuctionRemaining">
-                            <p id="timeleft'.$i.'">@AEM.StartTime</p>
+                            <p id="timeleft'.$i.'">END TIME : @AEM.EndTime</p>
                         </div>
 
-                        <a type="button" class="btn btn-primary x-btn-purple" href="">Go to Auction</a>
+                        <a type="button" class="btn btn-primary x-btn-purple" href="@Url.Action("SingleAuction","Auction")?AID=@AEM.AuctionID">Go to Auction</a>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@ else
                     <div class="xAuctionRemaining">
                         <p id="utimeleft'.$i.'"></p>
                     </div>
-                    <a type="button" class="btn btn-primary x-btn-purple" href="">View Auction</a>
+                    <a type="button" class="btn btn-primary x-btn-purple" href="@Url.Action("SingleAuction","Auction")?AID=@AEM.AuctionID">View Auction</a>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@ else
                     <div class="xborder">
                         <h4>@AEM.AuctionTitle</h4>
                         <img class="ximg-responsive" src="@Url.Content(AEM.AuctionMainPicture)" />
-                        <a type="button" class="btn btn-primary x-btn-purple" href="">View</a>
+                        <a type="button" class="btn btn-primary x-btn-purple" href="@Url.Action("SingleAuction","Auction")?AID=@AEM.AuctionID">View</a>
                     </div>
                 </div>
 
