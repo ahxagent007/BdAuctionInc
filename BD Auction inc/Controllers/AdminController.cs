@@ -124,6 +124,9 @@ namespace BD_Auction_inc.Controllers
         public ActionResult CreateAuction(AuctionEventModel AEM)
         {
             AEM.AuctionMainPicture = "-__-";
+            AEM.AuctionID = 0;
+            AEM.TotalProducts = 0;
+            
 
             if (ModelState.IsValid)
             {
@@ -137,12 +140,24 @@ namespace BD_Auction_inc.Controllers
                 fileName = Path.Combine(Server.MapPath("~/img/upload/auction/"), fileName);
 
                 AEM.ImageFile.SaveAs(fileName);
-            }
+
+                AEM.StartTime = dateTimeCorrection(AEM.StartTime);
+                AEM.StartTime = dateTimeCorrection(AEM.EndTime);
+
                 int row = AuctionProccessor.createAuction(AEM.AuctionTitle, AEM.AuctionDescription, AEM.StartTime, AEM.EndTime, AEM.TotalProducts, AEM.AuctionStatus, AEM.AuctionMainPicture);
+            }
+                
 
             return View();
         }
 
+
+        public string dateTimeCorrection(string dateTime) {
+
+            return dateTime.Replace('T', ' '); ;
+
+
+        }
 
 
         //$qry = "SELECT * FROM fanciers ORDER BY FancierName ASC LIMIT ".$rowFrom.", ".$rowTo.";";

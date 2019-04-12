@@ -112,7 +112,7 @@ namespace BD_Auction_Inc.BusinessLogic
 
         public static int makebid(int aID, int pID, int BID, string UID)
         {
-            string curTime = DateTime.Now.ToString("h:mm:ss tt");
+            string curTime = DateTime.Now.ToString("dd-mm:yyyy h:mm:ss tt");
             string sql = @"INSERT INTO dbo.Bids (productID, AuctionID, cID, BidAmount, BidTime )
                         VALUES (@productID, @AuctionID, @cID, @BidAmount, @BidTime );
                         UPDATE dbo.Product SET CurrentBid = @BidAmount WHERE pID = @productID;                        
@@ -141,7 +141,7 @@ namespace BD_Auction_Inc.BusinessLogic
         public static int RequestProductForAuction(ProductModel p) {
 
             string sql = @"INSERT INTO dbo.Product (pName, pDescription, pCatagory, pStartingPrice, StartTime, EndTime, PictureID, SellerID, ProductMainPicture, ProductStatus)
-                        VALUES (@pName, @pDescription, @pCatagory, @pStartingPrice, @StartTime, @EndTime, @PictureID, @SellerID, @MainPicture, @ProductStatus)";
+                        VALUES (@pName, @pDescription, @pCatagory, @pStartingPrice, @StartTime, @EndTime, @PictureID, @SellerID, @ProductMainPicture, @ProductStatus)";
 
             return SqlDataAccess.SaveData(sql, p);
         }
@@ -166,6 +166,38 @@ namespace BD_Auction_Inc.BusinessLogic
         }
 
         //Database theke object ber korbo then oi object er id diye onno operation chalabo THATS IT
+
+
+        public static long ConvertToMiliSeconds(String dateTime) //0:yyyy-MM-ddThh:mm:ss FORMAT 2019-04-01T02:31
+        {
+
+            int year = Convert.ToInt32(dateTime.Substring(0, 4));
+            int month = Convert.ToInt32(dateTime.Substring(5, 2));
+            int day = Convert.ToInt32(dateTime.Substring(8, 2));
+            int hour = Convert.ToInt32(dateTime.Substring(11, 2));
+            int minute = Convert.ToInt32(dateTime.Substring(14, 2));
+            //int second = Convert.ToInt32(dateTime.Substring(17, 2));
+            int second = 0;
+            int milisec = 0;
+
+
+            //Console.WriteLine(year + " " + month + " "+ day + " "+ hour +" "+ minute +" "+ second);
+
+            System.DateTime moment = new System.DateTime(
+                                year, month, day, hour, minute, second, milisec);
+
+
+            // Millisecond gets long.
+            long millisecond = moment.Ticks;
+
+            Console.WriteLine(millisecond);
+            //Console.WriteLine(Environment.TickCount);
+            Console.WriteLine("NOW " + DateTime.UtcNow.Ticks);
+
+            return millisecond;
+
+
+        }
 
     }
 }

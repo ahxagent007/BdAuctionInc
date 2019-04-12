@@ -47,7 +47,7 @@ namespace BD_Auction_inc.Controllers
         public ActionResult Bid(int PID, int BID) {
 
             List <ProductModel> PM = AuctionProccessor.GetProductsByPID(PID);
-            if (PM[0].CurrentBid <= BID) {
+            if (PM[0].CurrentBid <= BID && DateTime.Now.Ticks < AuctionProccessor.ConvertToMiliSeconds(PM[0].EndTime)) {
                 MakeBid( PID, BID);
             }
 
@@ -61,17 +61,12 @@ namespace BD_Auction_inc.Controllers
 
 
 
-        public long datetimeToMilis(DateTime yourDateTime) {
-
-            long milis = (long)(yourDateTime - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
-            return milis;
-        }
 
         public void checkedAuctions(AuctionViewModel AVM) {
             foreach (AuctionEventModel AEM in AVM.runningAuctions){
                 // AuctionProccessor.ChangeStatus();
-                long aucTime = datetimeToMilis(Convert.ToDateTime(AEM.EndTime));
-                long nowTIme = DateTime.Now.Millisecond;
+                long aucTime = AuctionProccessor.ConvertToMiliSeconds(AEM.EndTime); //AEM.EndTime;    
+                long nowTIme = DateTime.Now.Ticks;
                 if (aucTime > nowTIme) {
                     AuctionProccessor.ChangeStatus(AEM.AuctionID, "FINISHED");
                 }
@@ -80,8 +75,8 @@ namespace BD_Auction_inc.Controllers
             foreach (AuctionEventModel AEM in AVM.upcommingAuctions)
             {
                 // AuctionProccessor.ChangeStatus();
-                long aucTime = datetimeToMilis(Convert.ToDateTime(AEM.StartTime));
-                long nowTIme = DateTime.Now.Millisecond;
+                long aucTime = AuctionProccessor.ConvertToMiliSeconds(AEM.StartTime);
+                long nowTIme = DateTime.Now.Ticks;
                 if (aucTime >= nowTIme)
                 {
                     AuctionProccessor.ChangeStatus(AEM.AuctionID, "RUNNING");

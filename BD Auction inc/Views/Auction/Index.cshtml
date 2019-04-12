@@ -35,7 +35,7 @@
                             <p>@AEM.AuctionDescription</p>
                         </div>
                         <div class="xAuctionRemaining">
-                            <p id="timeleft'.$i.'">END TIME : @AEM.EndTime</p>
+                            <p id="timeleft">END TIME : @AEM.EndTime</p>
                         </div>
 
                         <a type="button" class="btn btn-primary x-btn-purple" href="@Url.Action("SingleAuction","Auction")?AID=@AEM.AuctionID">Go to Auction</a>
@@ -75,7 +75,7 @@ else
                         <p>@AEM.AuctionDescription</p>
                     </div>
                     <div class="xAuctionRemaining">
-                        <p id="utimeleft'.$i.'"></p>
+                        <p id="utimeleft">Start Time: @AEM.StartTime</p>
                     </div>
                     <a type="button" class="btn btn-primary x-btn-purple" href="@Url.Action("SingleAuction","Auction")?AID=@AEM.AuctionID">View Auction</a>
                 </div>
