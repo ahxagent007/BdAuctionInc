@@ -97,7 +97,6 @@ namespace BD_Auction_Inc.BusinessLogic
 
         }
 
-
         public static int addProductToAuction(int aID, int pID) {
             string sts = "ENTRY";
             string sql = @"INSERT INTO dbo.ProductsInAuction (pID, AuctionID, Status)
@@ -110,7 +109,7 @@ namespace BD_Auction_Inc.BusinessLogic
             return SqlDataAccess.SaveData(sql,new { pID = pID, AuctionID = aID, Status = sts});
         }
 
-        public static int makebid(int aID, int pID, int BID, string UID)
+        public static int makebid(int aID, int pID, int BID, int UID)
         {
             string curTime = DateTime.Now.ToString("dd-mm:yyyy h:mm:ss tt");
             string sql = @"INSERT INTO dbo.Bids (productID, AuctionID, cID, BidAmount, BidTime )

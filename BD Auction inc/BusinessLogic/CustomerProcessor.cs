@@ -41,5 +41,17 @@ namespace BD_Auction_Inc.BusinessLogic
 
         }
 
+        public static List<CustomerModelDB> getCustomersViaNetID(string cid)
+        {
+
+            string sql = @"SELECT cID, cName, cAddress, cNID, cEmail, cRating, VarificationStatus FROM dbo.Customer
+                            JOIN dbo.Customer, dbo.AspNetUsers
+                            ON dbo.Customer.cEmail = dbo.AspNetUsers.Email
+                            WHERE dbo.AspNetUsers.Id = '" + cid + "';";
+
+            return SqlDataAccess.LoadData<CustomerModelDB>(sql); //VDO 59.36
+
+        }
+
     }
 }

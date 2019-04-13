@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using BD_Auction_Inc.BusinessLogic;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
+using BD_Auction_Inc.Models;
 
 namespace BD_Auction_inc.Controllers
 {
@@ -55,8 +56,9 @@ namespace BD_Auction_inc.Controllers
         }
 
         public void MakeBid(int P, int B) {
-            var userID = User.Identity.GetUserId();
-            AuctionProccessor.makebid(Convert.ToInt32(Session["AUCTION_ID"]), P, B, userID);
+            string userID = User.Identity.GetUserId();
+            List<CustomerModelDB> customer = CustomerProcessor.getCustomersViaNetID(userID);
+            AuctionProccessor.makebid(Convert.ToInt32(Session["AUCTION_ID"]), P, B, customer[0].cID);
         }
 
 
