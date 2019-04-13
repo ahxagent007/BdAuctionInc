@@ -8,6 +8,7 @@ using BD_Auction_Inc.BusinessLogic;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using BD_Auction_Inc.Models;
+using System.Diagnostics;
 
 namespace BD_Auction_inc.Controllers
 {
@@ -69,6 +70,11 @@ namespace BD_Auction_inc.Controllers
                 // AuctionProccessor.ChangeStatus();
                 long aucTime = AuctionProccessor.ConvertToMiliSeconds(AEM.EndTime); //AEM.EndTime;    
                 long nowTIme = DateTime.Now.Ticks;
+
+                Debug.WriteLine("aucTime = "+ aucTime+" && nowTime = "+ nowTIme);
+                Console.WriteLine("aucTime = " + aucTime + " && nowTime = " + nowTIme);
+                System.Diagnostics.Debug.WriteLine("aucTime = " + aucTime + " && nowTime = " + nowTIme);
+
                 if (aucTime > nowTIme) {
                     AuctionProccessor.ChangeStatus(AEM.AuctionID, "FINISHED");
                 }

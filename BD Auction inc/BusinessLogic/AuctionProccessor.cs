@@ -111,7 +111,7 @@ namespace BD_Auction_Inc.BusinessLogic
 
         public static int makebid(int aID, int pID, int BID, int UID)
         {
-            string curTime = DateTime.Now.ToString("dd-mm:yyyy h:mm:ss tt");
+            string curTime = DateTime.Now.ToString("yyyy-mm:dd hh:mm:ss"); //2019-04-01T02:31
             string sql = @"INSERT INTO dbo.Bids (productID, AuctionID, cID, BidAmount, BidTime )
                         VALUES (@productID, @AuctionID, @cID, @BidAmount, @BidTime );
                         UPDATE dbo.Product SET CurrentBid = @BidAmount WHERE pID = @productID;                        

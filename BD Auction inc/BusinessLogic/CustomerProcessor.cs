@@ -45,7 +45,7 @@ namespace BD_Auction_Inc.BusinessLogic
         {
 
             string sql = @"SELECT cID, cName, cAddress, cNID, cEmail, cRating, VarificationStatus FROM dbo.Customer
-                            JOIN dbo.Customer, dbo.AspNetUsers
+                            JOIN dbo.AspNetUsers
                             ON dbo.Customer.cEmail = dbo.AspNetUsers.Email
                             WHERE dbo.AspNetUsers.Id = '" + cid + "';";
 
