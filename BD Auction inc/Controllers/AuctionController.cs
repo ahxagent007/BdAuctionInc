@@ -73,7 +73,7 @@ namespace BD_Auction_inc.Controllers
 
                 Debug.WriteLine("aucTime = "+ aucTime+" && nowTime = "+ nowTIme);
                 Console.WriteLine("aucTime = " + aucTime + " && nowTime = " + nowTIme);
-                System.Diagnostics.Debug.WriteLine("aucTime = " + aucTime + " && nowTime = " + nowTIme);
+                System.Diagnostics.Debug.WriteLine("aucTime = " + aucTime + " && nowTime = " + nowTIme); 
 
                 if (aucTime > nowTIme) {
                     AuctionProccessor.ChangeStatus(AEM.AuctionID, "FINISHED");
