@@ -142,7 +142,7 @@ namespace BD_Auction_inc.Controllers
                 AEM.ImageFile.SaveAs(fileName);
 
                 AEM.StartTime = dateTimeCorrection(AEM.StartTime);
-                AEM.StartTime = dateTimeCorrection(AEM.EndTime);
+                AEM.EndTime = dateTimeCorrection(AEM.EndTime);
 
                 int row = AuctionProccessor.createAuction(AEM.AuctionTitle, AEM.AuctionDescription, AEM.StartTime, AEM.EndTime, AEM.TotalProducts, AEM.AuctionStatus, AEM.AuctionMainPicture);
             }

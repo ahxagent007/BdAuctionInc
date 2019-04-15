@@ -4,14 +4,14 @@
     ViewBag.Title = "RequestProduct";
 }
 
-<h2>RequestProduct</h2>
+<h2>Request your Product</h2>
 
 @using (Html.BeginForm("RequestProduct", "Seller", FormMethod.Post, new { enctype = "multipart/form-data" })) //"RequestProduct", "Seller", FormMethod.Post, new { enctype = "multipart/form-data" }
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ProductModel</h4>
+        <h4>Fill up correctly</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 

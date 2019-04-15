@@ -27,6 +27,13 @@ namespace BD_Auction_inc.Controllers
 
             checkedAuctions(AVM);
 
+            AVM = new AuctionViewModel
+            {
+                runningAuctions = AuctionProccessor.GetAuctionByStatus("RUNNING"),
+                pastAuctions = AuctionProccessor.GetAuctionByStatus("FINISHED"),
+                upcommingAuctions = AuctionProccessor.GetAuctionByStatus("UPCOMING")
+            };
+
             return View(AVM);
         }
 
@@ -68,26 +75,33 @@ namespace BD_Auction_inc.Controllers
         public void checkedAuctions(AuctionViewModel AVM) {
             foreach (AuctionEventModel AEM in AVM.runningAuctions){
                 // AuctionProccessor.ChangeStatus();
-                long aucTime = AuctionProccessor.ConvertToMiliSeconds(AEM.EndTime); //AEM.EndTime;    
-                long nowTIme = DateTime.Now.Ticks;
+                long aucETime = AuctionProccessor.ConvertToMiliSeconds(AEM.EndTime); //AEM.EndTime;    
+                long nowTime = DateTime.Now.Ticks;
 
-                Debug.WriteLine("aucTime = "+ aucTime+" && nowTime = "+ nowTIme);
-                Console.WriteLine("aucTime = " + aucTime + " && nowTime = " + nowTIme);
-                System.Diagnostics.Debug.WriteLine("aucTime = " + aucTime + " && nowTime = " + nowTIme); 
+                Debug.WriteLine("auc End Time  = " + aucETime + " && nowTime = " + nowTime);
+                Console.WriteLine("auc End Time = " + aucETime + " && nowTime = " + nowTime);
+                System.Diagnostics.Debug.WriteLine("auc End Time = " + aucETime + " && nowTime = " + nowTime); 
 
-                if (aucTime > nowTIme) {
+                if (nowTime > aucETime) {
                     AuctionProccessor.ChangeStatus(AEM.AuctionID, "FINISHED");
+                    AuctionProccessor.updateProduectStatusByAuctionID(AEM.AuctionID, "FINISHED");
                 }
             }
 
             foreach (AuctionEventModel AEM in AVM.upcommingAuctions)
             {
                 // AuctionProccessor.ChangeStatus();
-                long aucTime = AuctionProccessor.ConvertToMiliSeconds(AEM.StartTime);
-                long nowTIme = DateTime.Now.Ticks;
-                if (aucTime >= nowTIme)
+                long aucSTime = AuctionProccessor.ConvertToMiliSeconds(AEM.StartTime);
+                long nowTime = DateTime.Now.Ticks;
+
+                Debug.WriteLine("auc Start Time = " + aucSTime + " && nowTime = " + nowTime);
+                Console.WriteLine("auc Start Time = " + aucSTime + " && nowTime = " + nowTime);
+                System.Diagnostics.Debug.WriteLine("auc Start Time = " + aucSTime + " && nowTime = " + nowTime);
+
+                if (nowTime > aucSTime)
                 {
                     AuctionProccessor.ChangeStatus(AEM.AuctionID, "RUNNING");
+                    AuctionProccessor.updateProduectStatusByAuctionID(AEM.AuctionID, "RUNNING");
                 }
             }
         }

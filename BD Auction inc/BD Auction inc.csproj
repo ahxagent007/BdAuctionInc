@@ -182,6 +182,7 @@
     <Compile Include="Controllers\AuctionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\SellerController.cs" />
     <Compile Include="DataAccess\SqlDataAccess.cs" />
     <Compile Include="Global.asax.cs">
@@ -200,6 +201,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MemberViewModel.cs" />
+    <Compile Include="Models\NewsModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ProductPIctureModel.cs" />
     <Compile Include="Models\ProductsInAuctionModel.cs" />
@@ -318,6 +320,7 @@
     <Content Include="Views\Admin\MemberList.cshtml" />
     <Content Include="Views\Admin\RunningAuction.cshtml" />
     <Content Include="Views\Auction\SingleAuction.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

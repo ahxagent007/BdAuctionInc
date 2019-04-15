@@ -21,7 +21,7 @@ namespace BD_Auction_Inc.Controllers
         }
 
         public ActionResult About(){
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "ID: 16.01.04.085, 16.01.04.087, 16.01.04.096, 16.01.04.100";
 
             return View();
         }
@@ -42,7 +42,7 @@ namespace BD_Auction_Inc.Controllers
         public ActionResult News()
         {
 
-            return View();
+            return RedirectToAction("Index", "News"); ;
         }
 
 

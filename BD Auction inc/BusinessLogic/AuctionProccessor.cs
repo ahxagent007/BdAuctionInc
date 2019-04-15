@@ -68,6 +68,20 @@ namespace BD_Auction_Inc.BusinessLogic
 
         }
 
+        public static int updateProduectStatusByAuctionID(int ID, String sstatus)
+        {
+
+            string sql = @"UPDATE dbo.Product
+                            SET dbo.Product.ProductStatus = @productStatus
+                            FROM dbo.Product
+                            JOIN dbo.ProductsInAuction 
+                            ON dbo.Product.pID = dbo.ProductsInAuction.pID
+                            WHERE AuctionID = @aID; ";
+
+            return SqlDataAccess.SaveData(sql, new { aID = ID, productStatus = sstatus });
+
+        }
+
         public static List<ProductModel> GetProductsByPID(int ID)
         {
 

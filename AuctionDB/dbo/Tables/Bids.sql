@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Bids]
 (
-	[BidID] INT NOT NULL PRIMARY KEY, 
+	[BidID] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [cID] INT NOT NULL, 
     [ProductID] INT NOT NULL, 
     [AuctionID] INT NOT NULL, 
